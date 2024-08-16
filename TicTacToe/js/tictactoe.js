@@ -73,7 +73,7 @@ function computersTurn(){
 }
 }
 		
-}		
+		
 //This functgion parses the selectedSquares array to determine if a player has won
 //The drawLine function is called if a win condition is met.			
 function checkWinConditions() {
@@ -117,13 +117,13 @@ function arrayIncludes(squareA, squareB, squareC) {
 	
 }
 
-}
+
 	// Clear the board and the array to restart the game	
 	function resetGame() {
 
-	for(let i=0; i<9; i++) {
-	let square = document.getElementById(String(i));
-	square.style.backgroundImage = '';
+		for(let i=0; i<9; i++) {
+			let square = document.getElementById(String(i));
+			square.style.backgroundImage = '';
 
 
 	}		
@@ -134,14 +134,14 @@ function arrayIncludes(squareA, squareB, squareC) {
 	// Plays the audio files	
 	function audio(audioURL) {
 
-	let audio = new Audio(audioURL);
-	audio.play();
+		let audio = new Audio(audioURL);
+		audio.play();
 
 	}		
 		
 	//Function to draw the line across winning coordinates
 	function drawWinLine(coordX1, coorddY1, coordX2, coordY2) {
-``	const canvas = document.getElementById('win-lines');
+	const canvas = document.getElementById('win-lines');
 	const c = canvas.getContext('2d');
 	let x1 = coordX1,
 		y1 = coordY1,
@@ -157,7 +157,7 @@ function arrayIncludes(squareA, squareB, squareC) {
 	function animateLineDrawing() {
 		
 		const animationLoop = requestAnimationFrame(animateLineDrawing);
-		c.clearRect(0, 0. 608, 608);
+		c.clearRect(0, 0, 608, 608);
 		c.beginPath();
 		c.moveTo(x1, y1);
 		c.lineTo(x, y);
@@ -174,7 +174,7 @@ function arrayIncludes(squareA, squareB, squareC) {
 		if(x1 <= x2 && y1 >= y2) {
 			
 			if(x < x2) { x+= 10; }
-			if(y > y2) ( y-= 10; }
+			if(y > y2) { y-= 10; }
 			if(y > y2) { y-= 10; }
 			if(x >= x2 && y<=y2) { cancelAnimationFrame(animationLoop); }
 		}
@@ -193,14 +193,14 @@ function arrayIncludes(squareA, squareB, squareC) {
 		audio('./media/winGame.mp');
 		animateLineDrawing();
 		setTimeOut(function () { clear(); resetGame(); }, 1000);
-	}
+	
 	
 	//Disables click during the computers turn
 	
 	function disableClick() {
 		
 		body.style.pointerEvents = none;
-		setTimeout(function () { body.style.pointerEvents = 'auto'; }, 1000};
+		setTimeout(function () { body.style.pointerEvents = 'auto'; }, 1000);
 		
 		
 	}
